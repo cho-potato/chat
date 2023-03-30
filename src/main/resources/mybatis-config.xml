@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+	
+	<typeAliases> 
+		<typeAlias type="nyu.socket.test.user.UserDTO" alias="UserDTO"/>
+		<typeAlias type="nyu.socket.test.chat.ChatRoomDTO" alias="ChatRoomDTO"/>
+		<typeAlias type="nyu.socket.test.chat.ChatMessageDTO" alias="ChatMessageDTO"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/chat-mapper.xml"/>
+		<mapper resource="mappers/user-mapper.xml"/>
+	</mappers>
+
+</configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="userMapper">
+
+	<!-- UserDTO -->
+	<resultMap type="UserDTO" id="userResultMap">
+		<id property="userUuid" column="USER_UUID"/>
+		<result property="userName" column="USER_NAME"/>
+		<result property="userPassword" column="USER_PASSWORD"/>
+		<result property="userPic" column="USER_PIC"/>
+	</resultMap>
+	
+	<select id="selectUser" parameterType="String" resultMap="userResultMap">
+		SELECT * FROM CHATUSER WHERE USER_NAME = #{name}
+	</select>
+
+	<select id="selectUserList" resultMap="userResultMap">
+		SELECT * FROM CHATUSER ORDER BY USER_NAME
+	</select>
+
+
+</mapper>
